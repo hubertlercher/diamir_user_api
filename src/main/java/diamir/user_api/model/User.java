@@ -30,6 +30,10 @@ public class User {
     @Lob
     private String profilePicture;
 
+    @Column(name = "ADMIN")
+    @NotNull
+    private boolean admin;
+
 
     //region Getter and Setter
 
@@ -73,9 +77,16 @@ public class User {
         this.profilePicture = profilePicture;
     }
 
+    public boolean isAdmin() {
+        return admin;
+    }
 
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
+    }
 
     public static BufferedImage resizeImage(BufferedImage originalImage, int targetWidth, int targetHeight) {
+
         Image resultingImage = originalImage.getScaledInstance(targetWidth, targetHeight, Image.SCALE_SMOOTH);
         BufferedImage outputImage = new BufferedImage(targetWidth, targetHeight, BufferedImage.TYPE_INT_RGB);
         Graphics2D g2d = outputImage.createGraphics();
