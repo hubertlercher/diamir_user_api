@@ -20,6 +20,10 @@ import java.io.IOException;
 import java.util.Base64;
 import java.util.Optional;
 
+
+// wie mit Herrn Satz vereinbart wurde die Aufgabe mit SpringBoot gelöst
+
+
 @RestController
 @RequestMapping("/users")
 public class UserRestController {
